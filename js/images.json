@@ -1,0 +1,37 @@
+{
+    "src": "img/1.jpg",
+    "name": "John",
+    "surname": "White",
+    "sex": "male",
+    "role": "Chairman"   
+},{
+    "src": "img/2.jpg",
+    "name": "William",
+    "surname": "Brown",
+    "sex": "male",
+    "role": "Manager"   
+},{
+    "src": "img/3.jpg",
+    "name": "Kate",
+    "surname": "Green",
+    "sex": "female",
+    "role": "Manager"   
+},{
+    "src": "img/4.jpg",
+    "name": "Monica",
+    "surname": "Black",
+    "sex": "female",
+    "role": "Accountant"   
+},{
+    "src": "img/5.jpg",
+    "name": "Joan",
+    "surname": "Smith",
+    "sex": "female",
+    "role": "Consultant"   
+},{
+    "src": "img/6.jpg",
+    "name": "Edward",
+    "surname": "Jones",
+    "sex": "male",
+    "role": "Consultant"   
+}
