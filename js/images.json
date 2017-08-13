@@ -1,4 +1,4 @@
-{
+[{
     "src": "img/1.jpg",
     "name": "John",
     "surname": "White",
@@ -34,4 +34,4 @@
     "surname": "Jones",
     "sex": "male",
     "role": "Consultant"   
-}
+}]

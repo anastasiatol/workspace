@@ -3,10 +3,9 @@
     padding: 0;
 }
 .logoline{
-    width: 90%;
+    width: 94%;
     max-width: 1800px;
-    margin-top: 2%;
-    margin-left: 5%;
+    margin: 2% 3%;
     display: flex;
     justify-content: center;
     font-size: 52px;
@@ -21,16 +20,16 @@
 .mainbody{
     width: 90%;
     max-width: 1800px;
-    display: flex;
     background: rgba(170, 223, 252, 0.75);
-    margin-top: 2%;
-    margin-left: 5%;
-    justify-content: space-between;
-    flex-wrap:wrap;
+    margin: 2% 3%;
     padding: 2%;
 }
 .search-field{
    width: 100%;
    margin-bottom:2%; 
 }
-
+.employees{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
