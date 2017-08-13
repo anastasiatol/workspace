@@ -33,3 +33,31 @@
     justify-content: space-between;
     flex-wrap:wrap;
 }
+.whitebox{
+    width: 24%;             
+    background: white;
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(14, 31, 230);
+    border: 1px white solid;
+}
+.small{
+    width: 80%;
+}
+.whitebox:hover{
+    background: rgba(239, 67, 120, 0.21);
+    border: 1px red solid;
+}
+@media screen and (max-width: 800px) {
+    .whitebox {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .whitebox {
+            width: 90%;
+    }
+}

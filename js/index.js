@@ -14,7 +14,14 @@ function renderImageCollection(images) {
         images.forEach(function (image) {
             var img = document.createElement("img");
             img.src = image.src;
-            $(".employees").append(img);
+            $(img).addClass("small");
+            var div = document.createElement('div');
+            $(div).addClass("whitebox");
+            $(div).append(img);
+            var h2 = document.createElement('h2');
+            h2.innerText = image.name + ' ' + image.surname;
+            $(div).append(h2);
+            $(".employees").append(div);
         });
     }
 }
