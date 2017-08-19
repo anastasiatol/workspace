@@ -2,11 +2,15 @@ function getEmployeeListFromServer() {
     return $.get("js/employeeList.json");
 }
 
-function employeeList() {
+function getEmployeeList() {
         getEmployeeListFromServer().then(function (data) {
         renderEmployeeList(data);
         this.employeeList = data;
     }.bind(this))
+//    var employeeList = getEmployeeListFromServer().then(function (data) {
+//        employeeList = JSON.parse(data);
+//        renderEmployeeList(employeeList);
+//    })
 }
 
 function renderEmployeeList(employeeList) {
@@ -39,10 +43,21 @@ function openModalWindow(ev){
             var divModal = document.createElement('div');
             $(divModalBack).addClass("modalWindow");
             $(divModal).addClass("modalContent");
+            
+            var buttonClose = document.createElement('span');
+            buttonClose.innerHTML = '&times';
+            $(buttonClose).click (function (){
+                $(".modalWindow").remove();
+            });
+             $(divModal).append(buttonClose);
+            
+            var part1 = document.createElement("div");
+            $(part1).addClass("modalForm");
             var photo = document.createElement("img");
             photo.src = employee.src;
-            $(divModal).append(photo);
+            $(part1).append(photo);
             var divInformation=document.createElement('div');
+            $(divInformation).addClass("information");
             var p1 = document.createElement('p');
             p1.innerText = employee.name;
             var p2 = document.createElement('p');
@@ -52,27 +67,32 @@ function openModalWindow(ev){
             $(divInformation).append(p1);
             $(divInformation).append(p2);
             $(divInformation).append(p3);
-            $(divModal).append(divInformation);
-            var divRole = document.createElement('div');
-            divRole.innerHTML = employee.role;
-            $(divModal).append(divRole);
+            $(part1).append(divInformation);
+            $(divModal).append(part1);
+            
+            var part2 = document.createElement('div');
+            $(part2).addClass("modalForm");
+            part2.innerHTML = employee.role;
+            $(divModal).append(part2);
+            
+            var part3 = document.createElement("div");
+            $(part3).addClass("modalForm");
+            var divEdit = document.createElement('div');
+            $(divEdit).addClass("button");
+            divEdit.innerHTML = 'edit';
+            $(part3).append(divEdit);
+            var divDelete = document.createElement('div');
+            divDelete.innerHTML = 'delete';
+            $(divDelete).addClass("button");
+            $(part3).append(divDelete);
+            $(divModal).append(part3);
+            
             $(divModalBack).append(divModal);
-            var buttonClose = document.createElement('span');
-            buttonClose.innerHTML = 'close';
-            $(buttonClose).click (function (){
-                $(".modalWindow").remove();
-            });
-            $(divModal).append(buttonClose);
             $(".modal").append(divModalBack);
         }
     })
 }
-//function closeModalWindow(ev){
-//    var targetModal = ev.target;
-//    targetModal.parentElement.style.display = "none";
-//}
-
 
 $(document).ready(function () {
-    employeeList();
+    getEmployeeList();
 });
