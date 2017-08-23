@@ -12,17 +12,29 @@ angular.module("workspaceApp")
         var getEmployeeListFromServer = function () {
             return $http.get("./js/employeeList.json");
         }
-        $scope.openModalWindow = function (event) {
-
+        $scope.openModalWindow = function (employee) {
+            $scope.selectedEmployee = employee;
+            $scope.showEmployeeInfoDialog = true;
         };
         $scope.deleteEmployee = function () {
-            var index = this.employeeList.indexOf(this.employeeList.find(function (element) {
-                return element.id == idNumber
-            }))
-            this.employeeList.splice(index, 1);
+            this.employeeList.splice($scope.employeeList.indexOf($scope.selectedEmployee), 1);
 
-            $(".modalWindow").remove();
-            renderEmployeeList(this.employeeList);
+            $scope.closeModalWindow();
         }
         getEmployeeList();
+    })
+    .directive('infoEmployeeModal', function () {
+        return {
+            templateUrl: "./js/shared/editModal/info.modal.html",
+            restrict: "E",
+            scope:{
+                showEmployeeInfoDialog: "=",
+                selectedEmployee: "="
+            },
+            controller: function($scope){
+                $scope.onClose = function(){
+                    $scope.showEmployeeInfoDialog = false;
+                }
+            }
+        }
     });

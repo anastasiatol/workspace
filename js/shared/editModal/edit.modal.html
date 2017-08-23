@@ -1,17 +1,25 @@
-<div class="modalWindow">
+<div class="modalWindow" ng-show="showEmployeeInfoDialog">
     <div class="modalContent">
-        <span ng-click='closeModalWindow'>&times</span>
+        <span ng-click='onClose()'>&times</span>
         <div class="modalForm">
-            <img ng-src={{employee.src}}>
-            <div class='information'>
-                <p>{{employee.name}}</p>
-                <p>{{employee.surname}}</p>
-                <p>{{employee.sex}}</p>
-            </div>
-            <div class='modalForm'>{{employee.role}}</div>
+            <img ng-src={{selectedEmployee.src}}>
+            <form class='information'>
+                Name: <br> 
+                <input type="text" value="{{selectedEmployee.name}}"/>
+                Surname<br>
+                <input type="text" value="{{selectedEmployee.surname}}"/>
+                Sex<br>
+                <input type="radio" name="sex" value="male" value="{{selectedEmployee.sex}}"/>
+                Role<br>
+                <select ng-model="selectedEmployee.role">
+                    <option value="chairman">chairman</option>
+                    <option value="manager">manager</option>
+                    <option value="consultant">consultant</option>
+                </select>
+            </form>
             <div class="modalForm">
-                <div class="button" ng-click="">edit</div>
-                <div class="button" ng-click="deleteEmployee">delete</div>
+                <div class="button" ng-click="">save</div>
+                <div class="button" ng-click="deleteEmployee()">cancel</div>
             </div>
         </div>
     </div>

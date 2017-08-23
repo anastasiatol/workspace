@@ -1,0 +1,18 @@
+<div class="modalWindow" ng-show="showEmployeeInfoDialog">
+    <div class="modalContent">
+        <span ng-click='onClose()'>&times</span>
+        <div class="modalForm">
+            <img ng-src={{selectedEmployee.src}}>
+            <div class='information'>
+                <p>{{selectedEmployee.name}}</p>
+                <p>{{selectedEmployee.surname}}</p>
+                <p>{{selectedEmployee.sex}}</p>
+            </div>
+            <div class='modalForm'>{{selectedEmployee.role}}</div>
+            <div class="modalForm">
+                <div class="button" ng-click="">edit</div>
+                <div class="button" ng-click="deleteEmployee()">delete</div>
+            </div>
+        </div>
+    </div>
+</div>
