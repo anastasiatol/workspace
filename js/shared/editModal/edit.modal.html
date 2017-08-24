@@ -5,11 +5,12 @@
             <img ng-src={{selectedEmployee.src}}>
             <form class='information'>
                 Name: <br> 
-                <input type="text" value="{{selectedEmployee.name}}"/>
+                <input type="text" value="{{selectedEmployee.name}}">
                 Surname<br>
-                <input type="text" value="{{selectedEmployee.surname}}"/>
+                <input type="text" value="{{selectedEmployee.surname}}">
                 Sex<br>
-                <input type="radio" name="sex" value="male" value="{{selectedEmployee.sex}}"/>
+                <input type="radio" name="sex" value="male">    <!--надо предвыбрать-->
+                <input type='radio' name='sex' value='female'>
                 Role<br>
                 <select ng-model="selectedEmployee.role">
                     <option value="chairman">chairman</option>
@@ -19,7 +20,7 @@
             </form>
             <div class="modalForm">
                 <div class="button" ng-click="">save</div>
-                <div class="button" ng-click="deleteEmployee()">cancel</div>
+                <div class="button" ng-click="">cancel</div>
             </div>
         </div>
     </div>
