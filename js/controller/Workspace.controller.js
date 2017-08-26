@@ -1,5 +1,6 @@
 angular.module("workspaceApp")
     .controller("WorkspaceController", function ($scope, $http) {
+        $scope.showEmployeeEditDialog = false;
         var getEmployeeList = function () {
             getEmployeeListFromServer().then(function (response) {
                 console.log(response.data);
@@ -13,49 +14,73 @@ angular.module("workspaceApp")
             return $http.get("./js/employeeList.json");
         }
         $scope.openModalWindow = function (employee) {
+            $scope.selectedEmployeeInitialData = angular.copy(employee);
             $scope.selectedEmployee = employee;
             $scope.showEmployeeInfoDialog = true;
         };
-        $scope.deleteEmployee = function () {
-            this.employeeList.splice($scope.employeeList.indexOf($scope.selectedEmployee), 1);
 
-            $scope.closeModalWindow();
-        }
+        $scope.$on('deleteEmployee', function (event) {
+            $scope.employeeList.splice($scope.employeeList.indexOf($scope.selectedEmployee), 1);
+            $scope.showEmployeeInfoDialog = false;
+        })
+   
+        $scope.$on('openModalEdit', function (event) {
+            $scope.showEmployeeEditDialog = true;
+        })
+    
+        $scope.$on('resetEmployeeData', function (event){
+            $scope.selectedEmployee = $scope.selectedEmployeeInitialData;
+        })
+
         getEmployeeList();
     })
     .directive('infoEmployeeModal', function () {
         return {
             templateUrl: "./js/shared/editModal/info.modal.html",
             restrict: "E",
-            scope:{
+            transclude: true,
+            scope: {
                 showEmployeeInfoDialog: "=",
+                showEmployeeEditDialog: "=",
                 selectedEmployee: "="
             },
-            controller: function($scope){
-                $scope.onClose = function(){
+            controller: function ($scope) {
+                $scope.onClose = function () {
                     $scope.showEmployeeInfoDialog = false;
+                };
+                $scope.openModalEdit = function () {
+                    $scope.showEmployeeInfoDialog = false;
+                    $scope.$emit('openModalEdit');
+                };
+                $scope.deleteEmployee = function () {
+                    $scope.$emit('deleteEmployee');
                 }
             }
         }
     })
     .directive('editEmployeeModal', function () {
         return {
-            templateUrl: "./js/shared/editModal/info.modal.html",
+            templateUrl: "./js/shared/editModal/edit.modal.html",
             restrict: "E",
-            scope:{
+            scope: {
                 showEmployeeEditDialog: "=",
                 selectedEmployee: "="
             },
-            controller: function($scope){
-                $scope.onClose = function(){
+            link: function (scope) {
+                console.log(scope);
+            },
+            controller: function ($scope) {
+                console.log($scope);
+
+                $scope.onClose = function () {
                     $scope.showEmployeeEditDialog = false;
                 }
-            },
-            controller: function($scope){
-                $scope.saveEmployee = function(){
-                    
-            
-            
+
+                $scope.cancelChanges = function () {
+                    $scope.showEmployeeEditDialog = false;
+                    $scope.$emit('resetEmployeeData');
+                }
+                $scope.saveEmployee = function () {
                     $scope.showEmployeeEditDialog = false;
                 }
             }

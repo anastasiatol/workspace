@@ -9,8 +9,8 @@
                 <p>{{selectedEmployee.sex}}</p>
             </div>
             <div class='modalForm'>{{selectedEmployee.role}}</div>
-            <div class="modalForm">
-                <div class="button" ng-click="">edit</div>
+            <div class="action-buttons">
+                <div class="button" ng-click="openModalEdit()">edit</div>
                 <div class="button" ng-click="deleteEmployee()">delete</div>
             </div>
         </div>

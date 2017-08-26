@@ -1,8 +1,7 @@
-<div class="modalWindow" ng-show="showEmployeeInfoDialog">
+<div class="modalWindow" ng-show="showEmployeeEditDialog">
     <div class="modalContent">
         <span ng-click='onClose()'>&times</span>
         <div class="modalForm">
-            <img ng-src={{selectedEmployee.src}}>
             <form class='information'>
                 Name: <br> 
                 <input type="text" value="{{selectedEmployee.name}}">
@@ -18,9 +17,9 @@
                     <option value="consultant">consultant</option>
                 </select>
             </form>
-            <div class="modalForm">
-                <div class="button" ng-click="saveEmployee">save</div>
-                <div class="button" ng-click="onClose">cancel</div>
+            <div class="action-buttons">
+                <div class="button" ng-click="saveEmployee()">save</div>
+                <div class="button" ng-click="cancelChanges()">cancel</div>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-.modalWindow{
+.modalWindow {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -6,9 +6,10 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background: rgba(0, 0, 0, 0.65); 
+    background: rgba(0, 0, 0, 0.65);
 }
-.modalContent{
+
+.modalContent {
     background: rgb(255, 255, 255);
     margin: 15% auto;
     border: 2px solid rgb(14, 31, 230);
@@ -17,37 +18,42 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
 }
-.modalContent span{
+
+.modalContent span {
     text-align: right;
     margin-right: 3px;
 }
-.modalContent img{
+
+.modalContent img {
     width: 45%;
     height: 45%;
 }
-.modalContent .button{
-    border: 1px black solid;
-    width: 45%;
-    margin: 5px;
-    text-align: center;
-}
+
 .modalContent .information {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.modalForm{
+
+.modalForm {
     display: flex;
+    flex-direction: column;
     margin: 5px;
     justify-content: space-around;
 }
-.modalContent p{
+
+.action-buttons .button {
+    border: 1px solid black;
+    width: 45%;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.modalContent p {
     width: 95%;
     font-size: 18px;
     text-align: center;
     margin: 5px;
 }
-
-
