@@ -37,4 +37,27 @@ angular.module("workspaceApp")
                 }
             }
         }
+    })
+    .directive('editEmployeeModal', function () {
+        return {
+            templateUrl: "./js/shared/editModal/info.modal.html",
+            restrict: "E",
+            scope:{
+                showEmployeeEditDialog: "=",
+                selectedEmployee: "="
+            },
+            controller: function($scope){
+                $scope.onClose = function(){
+                    $scope.showEmployeeEditDialog = false;
+                }
+            },
+            controller: function($scope){
+                $scope.saveEmployee = function(){
+                    
+            
+            
+                    $scope.showEmployeeEditDialog = false;
+                }
+            }
+        }
     });
