@@ -30,6 +30,10 @@ angular.module("workspaceApp")
     
         $scope.$on('resetEmployeeData', function (event){
             $scope.selectedEmployee = $scope.selectedEmployeeInitialData;
+            console.log ($scope.selectedEmployee);
+            console.log ($scope.selectedEmployeeInitialData);
+            console.log ($scope.employeeList);
+           
         })
 
         getEmployeeList();
@@ -78,7 +82,7 @@ angular.module("workspaceApp")
 
                 $scope.cancelChanges = function () {
                     $scope.showEmployeeEditDialog = false;
-                    $scope.$emit('resetEmployeeData');
+                   $scope.$emit('resetEmployeeData');
                 }
                 $scope.saveEmployee = function () {
                     $scope.showEmployeeEditDialog = false;

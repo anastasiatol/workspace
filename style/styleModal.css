@@ -16,12 +16,12 @@
     width: 60%;
     max-width: 400px;
     display: flex;
-    flex-direction: column;
+    text-align: center;
     flex-wrap: wrap;
 }
 
 .modalContent span {
-    text-align: right;
+    float: right;
     margin-right: 3px;
 }
 
@@ -45,7 +45,7 @@
 
 .action-buttons .button {
     border: 1px solid black;
-    width: 45%;
+    width: 40%;
     margin: 5px;
     text-align: center;
     display: inline-block;
@@ -56,4 +56,9 @@
     font-size: 18px;
     text-align: center;
     margin: 5px;
+}
+.block1{
+    display: flex;
+    margin: 5px;
+    justify-content: space-around;
 }

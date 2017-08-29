@@ -24,13 +24,14 @@
         <p>WORKSPACE</p>
     </div>
     <div class='mainbody'>
-        <div class="search-field">
-            <input type="text" oninput="search(this.value)">
-        </div>
+        
 
         <div ng-controller="WorkspaceController">
+            <div class="search-field">
+            <input type="text" ng-model='searchEmployee'>
+        </div>
             <div class="employees">
-                <div class="whitebox" ng-click="openModalWindow(employee)" ng-repeat='employee in employeeList'>
+                <div class="whitebox" ng-click="openModalWindow(employee)" ng-repeat='employee in employeeList | filter:{surname:searchEmployee}'>
                     <img ng-src={{employee.src}} class="small">
                     <h2>{{employee.name}} {{employee.surname}}
                     </h2>
@@ -38,10 +39,8 @@
             </div>
             <info-employee-modal show-employee-info-dialog="showEmployeeInfoDialog" selected-employee="selectedEmployee" ></info-employee-modal>
             <edit-employee-modal show-employee-edit-dialog="showEmployeeEditDialog" selected-employee="selectedEmployee"></edit-employee-modal>
-            
-            <div directive-test></div>
+            <div class="button" ng-click="openModalEdit()" >edit</div>
         </div>
-
     </div>
 </body>
 <footer>

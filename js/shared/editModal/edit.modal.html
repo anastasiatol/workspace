@@ -1,20 +1,22 @@
 <div class="modalWindow" ng-show="showEmployeeEditDialog">
     <div class="modalContent">
-        <span ng-click='onClose()'>&times</span>
         <div class="modalForm">
             <form class='information'>
                 Name: <br> 
-                <input type="text" value="{{selectedEmployee.name}}">
-                Surname<br>
-                <input type="text" value="{{selectedEmployee.surname}}">
-                Sex<br>
-                <input type="radio" name="sex" value="male">    <!--надо предвыбрать-->
+                <input type="text" ng-model = 'selectedEmployee.name'>
+                Surname:<br>
+                <input type="text" ng-model="selectedEmployee.surname">
+                Sex:<br>
+                <input type="radio" name="sex" value="male"> 
+                male<br>
+                <!--надо предвыбрать-->
                 <input type='radio' name='sex' value='female'>
+                female<br>
                 Role<br>
                 <select ng-model="selectedEmployee.role">
-                    <option value="chairman">chairman</option>
-                    <option value="manager">manager</option>
-                    <option value="consultant">consultant</option>
+                    <option value="Chairman">Chairman</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Consultant">Consultant</option>
                 </select>
             </form>
             <div class="action-buttons">
