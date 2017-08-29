@@ -23,18 +23,32 @@ angular.module("workspaceApp")
             $scope.employeeList.splice($scope.employeeList.indexOf($scope.selectedEmployee), 1);
             $scope.showEmployeeInfoDialog = false;
         })
-   
+
         $scope.$on('openModalEdit', function (event) {
             $scope.showEmployeeEditDialog = true;
         })
-    
-        $scope.$on('resetEmployeeData', function (event){
+
+        $scope.$on('resetEmployeeData', function (event) {
             $scope.selectedEmployee = $scope.selectedEmployeeInitialData;
-            console.log ($scope.selectedEmployee);
-            console.log ($scope.selectedEmployeeInitialData);
-            console.log ($scope.employeeList);
-           
-        })
+            updateEmployee($scope.selectedEmployeeInitialData);
+            console.log($scope.employeeList);
+        });
+
+        var updateEmployee = function(employee) {
+            var employeeToUpdate = $scope.employeeList.find(function (currentEmployee) {
+                return currentEmployee.id = employee.id
+            })
+            if (employeeToUpdate) {
+                employeeToUpdate.name = employee.name;
+                employeeToUpdate.surname = employee.surname;
+                employeeToUpdate.id = employee.id;
+                employeeToUpdate.role = employee.role;
+                employeeToUpdate.sex = employee.sex;
+                employeeToUpdate.src = employee.src;
+            } else {
+                $scope.employeeList.push(employee)
+            }
+        }
 
         getEmployeeList();
     })
@@ -82,7 +96,7 @@ angular.module("workspaceApp")
 
                 $scope.cancelChanges = function () {
                     $scope.showEmployeeEditDialog = false;
-                   $scope.$emit('resetEmployeeData');
+                    $scope.$emit('resetEmployeeData');
                 }
                 $scope.saveEmployee = function () {
                     $scope.showEmployeeEditDialog = false;
