@@ -46,6 +46,12 @@
 .small{
     width: 80%;
 }
+.button{
+    border: 1px solid black;
+    background: white;
+    display: inline-block;
+    padding: 5px 10px;
+}
 .whitebox:hover{
     background: rgba(239, 67, 120, 0.21);
     border: 1px red solid;

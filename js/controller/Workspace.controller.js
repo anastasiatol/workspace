@@ -19,6 +19,11 @@ angular.module("workspaceApp")
             $scope.showEmployeeInfoDialog = true;
         };
 
+        $scope.createEmployee = function () {
+            $scope.selectedEmployee = {};
+            $scope.showEmployeeEditDialog = true;
+        }
+
         $scope.$on('deleteEmployee', function (event) {
             $scope.employeeList.splice($scope.employeeList.indexOf($scope.selectedEmployee), 1);
             $scope.showEmployeeInfoDialog = false;
@@ -34,7 +39,11 @@ angular.module("workspaceApp")
             console.log($scope.employeeList);
         });
 
-        var updateEmployee = function(employee) {
+        $scope.$on('saveEmployeeData', function (event, selectedEmployee) {
+            updateEmployee(selectedEmployee);
+        })
+
+        var updateEmployee = function (employee) {
             var employeeToUpdate = $scope.employeeList.find(function (currentEmployee) {
                 return currentEmployee.id = employee.id
             })
@@ -46,7 +55,10 @@ angular.module("workspaceApp")
                 employeeToUpdate.sex = employee.sex;
                 employeeToUpdate.src = employee.src;
             } else {
-                $scope.employeeList.push(employee)
+                console.log(employee);
+                $scope.employeeList.push(employee);
+                var newId = $scope.employeeList[$scope.employeeList.length - 1].id + 1;
+                $scope.employeeList.employee.id = newId;
             }
         }
 
@@ -100,6 +112,7 @@ angular.module("workspaceApp")
                 }
                 $scope.saveEmployee = function () {
                     $scope.showEmployeeEditDialog = false;
+                    $scope.$emit('saveEmployeeData', $scope.selectedEmployee);
                 }
             }
         }
