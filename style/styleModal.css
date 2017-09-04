@@ -62,3 +62,6 @@
     margin: 5px;
     justify-content: space-around;
 }
+.ng-invalid.ng-touched{
+    background: red;
+}

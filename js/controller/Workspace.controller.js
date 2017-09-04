@@ -45,7 +45,7 @@ angular.module("workspaceApp")
 
         var updateEmployee = function (employee) {
             var employeeToUpdate = $scope.employeeList.find(function (currentEmployee) {
-                return currentEmployee.id = employee.id
+                return currentEmployee.id == employee.id
             })
             if (employeeToUpdate) {
                 employeeToUpdate.name = employee.name;
@@ -110,9 +110,11 @@ angular.module("workspaceApp")
                     $scope.showEmployeeEditDialog = false;
                     $scope.$emit('resetEmployeeData');
                 }
-                $scope.saveEmployee = function () {
-                    $scope.showEmployeeEditDialog = false;
-                    $scope.$emit('saveEmployeeData', $scope.selectedEmployee);
+                $scope.saveEmployee = function (informationForm) {
+                    if (informationForm.$valid) {
+                        $scope.showEmployeeEditDialog = false;
+                        $scope.$emit('saveEmployeeData', $scope.selectedEmployee);
+                    }
                 }
             }
         }
