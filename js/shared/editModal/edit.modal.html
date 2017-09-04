@@ -1,19 +1,23 @@
 <div class="modalWindow" ng-show="showEmployeeEditDialog">
     <div class="modalContent">
         <div class="modalForm">
-            <form class='information'>
+            <form class='information' name='employeeInfo'>
                 Name: <br>
-                <input type="text" ng-model='selectedEmployee.name'> Surname:
+                <input type="text" name='name' ng-model='selectedEmployee.name' required ng-minlength='2'>
+                Surname:
                 <br>
-                <input type="text" ng-model="selectedEmployee.surname"> Sex:
+                <input type="text" name='surname' ng-model="selectedEmployee.surname" > 
+                Sex:
                 <br>
-                <input type="radio" name="sex" value="male"> male
+                <input type="radio" name="sex" value="male" ng-model="selectedEmployee.sex"> 
+                male
                 <br>
-                <!--надо предвыбрать-->
-                <input type='radio' name='sex' value='female'> female
-                <br> Role
+                <input type='radio' name='sex' value='female' ng-model="selectedEmployee.sex"> 
+                female
+                <br> 
+                Role
                 <br>
-                <select ng-model="selectedEmployee.role">
+                <select name='role' ng-model="selectedEmployee.role" >
                     <option value="Chairman">Chairman</option>
                     <option value="Manager">Manager</option>
                     <option value="Consultant">Consultant</option>
