@@ -1,32 +1,51 @@
 ﻿*{
     margin: 0;
     padding: 0;
+    font-family: Abel;
 }
 .logoline{
-    width: 94%;
+    width: 95%;
     max-width: 1800px;
-    margin: 2% 3%;
+    margin: 15px;
     display: flex;
-    justify-content: center;
-    font-size: 52px;
-    color: rgb(14, 31, 230);
+    color: white;
+    background: rgb(30, 114, 227);
+    padding: 5px 10px;
+    font-size: 7vw;
 }
-.logo{
-    width: 15%;
-    max-width: 146px;
-    height: 15%;
-    max-height: 146px;
+.logoline>p{
+    flex-grow: 2;
+}
+.logoline>.button{
+    background: white;
+    font-size: 5vw;
+    color: rgb(30, 114, 227);
+    margin: 0px 5px;
+    border: white;
+    color: rgb(14, 31, 230)
+}
+.logoline>.button:hover{
+    background: rgb(247, 83, 177);
+    font-weight: 800;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
 }
 .mainbody{
-    width: 90%;
+    width: 95%;
     max-width: 1800px;
     background: rgba(170, 223, 252, 0.75);
-    margin: 2% 3%;
-    padding: 2%;
+    margin: 15px;
+    padding: 10px;
 }
 .search-field{
-   width: 100%;
-   margin-bottom:2%; 
+   width: 95%;
+}
+.searchItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;    
 }
 .employees{
     display: flex;
@@ -34,36 +53,77 @@
     flex-wrap:wrap;
 }
 .whitebox{
-    width: 24%;             
+    width: 30%;             
     background: white;
-    padding: 2%;
-    margin: 2%;
+    padding: 5px;
+    margin: 5px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1.5vw;
     color: rgb(14, 31, 230);
-    border: 1px white solid;
+    border: 1px rgba(170, 223, 252, 0.75) solid;
+    font-size: 1.25vw;
+    display: flex;
+    justify-content: space-between;
 }
 .small{
-    width: 80%;
+    width: 50%;
+    height: 100%
+}
+.infMainPage{
+    display: flex;
+    flex-direction: column;
+}
+.infMainPage h1{
+    flex-grow: 2;
+}
+.connections{
+    display: flex;
+    flex-grow: 2;
+    align-items: flex-end;
+}
+.connections img{
+    width: 25%;
+    margin: 3px;
+    border: solid 1px white;
+    margin: auto;
+}
+.connections img:hover{
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
 }
 .button{
     border: 1px solid black;
     background: white;
     display: inline-block;
     padding: 5px 10px;
+    margin: 5px;
+}
+.button:hover{
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    font-weight: 800;
+    background: rgb(247, 83, 177); 
 }
 .whitebox:hover{
-    background: rgba(239, 67, 120, 0.21);
-    border: 1px red solid;
+    box-shadow: inset 0 0 0 5px rgb(113, 113, 113);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
 }
 @media screen and (max-width: 800px) {
     .whitebox {
-        width: 40%;
-    }
+        width: 43%;
+        font-size: 1.75vw;
 }
 
 @media screen and (max-width: 400px) {
     .whitebox {
-            width: 90%;
+        width: 90%;
+        font-size: 4vw;
     }
 }

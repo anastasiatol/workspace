@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>Workspace</title>
     <link rel="shortcut icon" href="img/favicon.ico.png" type="images/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -20,22 +22,33 @@
 
 <body>
     <div class='logoline'>
-        <img class="logo" src="img/logo.jpg" alt="Логотип">
         <p>WORKSPACE</p>
+        <div class="button">home</div>
+        <div class="button">me</div>
     </div>
     <div class='mainbody'>
         
 
         <div ng-controller="WorkspaceController">
-            <div class="search-field">
-            <input type="text" ng-model='searchEmployee'>
-        </div>
-            <div class="button" ng-click="createEmployee()" >add</div>
+            <div class="searchItems">
+                <input type="text" class='search-field' ng-model='searchEmployee'>
+                <img class='searchImg' src=img/search.png>
+            </div>
+            <div class="button" ng-click="createEmployee()" >add a new employee</div>
             <div class="employees">
-                <div class="whitebox" ng-click="openModalWindow(employee)" ng-repeat='employee in employeeList | filter:{surname:searchEmployee, name:searchEmployee}'>
+                <div class="whitebox" ng-click="openModalWindow(employee)" ng-repeat='employee in employeeList | filter:{surname:searchEmployee}'>
                     <img ng-src={{employee.src}} class="small">
-                    <h2>{{employee.name}} {{employee.surname}}
-                    </h2>
+                    <div class="infMainPage">
+                        <h1>{{employee.name}} {{employee.surname}}</h1>
+                        <h2>{{employee.age}}</h2>
+                        <h2>{{employee.sex}}</h2>
+                        <h2>{{employee.role}}</h2>
+                        <div class="connections">
+                            <img src=img/skype.jpg>
+                            <img src=img/post.png>
+                            <img src=img/phone.png>
+                        </div>
+                    </div>
                 </div>
             </div>
             <info-employee-modal show-employee-info-dialog="showEmployeeInfoDialog" selected-employee="selectedEmployee" ></info-employee-modal>

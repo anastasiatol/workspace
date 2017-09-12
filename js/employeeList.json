@@ -4,40 +4,46 @@
     "name": "John",
     "surname": "White",
     "sex": "male",
-    "role": "Chairman"   
+    "role": "Chairman",
+    "age": "10.12.1962"
 },{
     "src": "img/2.jpg",
     "id": "1002",
     "name": "William",
     "surname": "Brown",
     "sex": "male",
-    "role": "Manager"   
+    "role": "Manager",
+    "age": "14.02.1977"
 },{
     "src": "img/3.jpg",
     "id": "1003",
     "name": "Kate",
     "surname": "Green",
     "sex": "female",
-    "role": "Manager"   
+    "role": "Manager",
+    "age": "15.05.1968"
 },{
     "src": "img/4.jpg",
     "id": "1004",
     "name": "Monica",
     "surname": "Black",
     "sex": "female",
-    "role": "Accountant"   
+    "role": "Accountant",
+    "age": "18.06.1971"
 },{
     "src": "img/5.jpg",
     "id": "1005",
     "name": "Joan",
     "surname": "Smith",
     "sex": "female",
-    "role": "Consultant"   
+    "role": "Consultant",
+    "age": "30.11.1979"
 },{
     "src": "img/6.jpg",
     "id": "1006",
     "name": "Edward",
     "surname": "Jones",
     "sex": "male",
-    "role": "Consultant"   
+    "role": "Consultant",
+    "age": "18.03.1974"
 }]
