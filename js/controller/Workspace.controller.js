@@ -45,6 +45,7 @@ angular.module("workspaceApp")
 
         var updateEmployee = function (employee) {
             var employeeToUpdate = $scope.employeeList.find(function (currentEmployee) {
+<<<<<<< HEAD
                     return currentEmployee.id == employee.id
                 })
                 if (employeeToUpdate) {
@@ -60,6 +61,23 @@ angular.module("workspaceApp")
                     var newId = $scope.employeeList[$scope.employeeList.length - 1].id + 1;
                     $scope.employeeList.employee.id = newId;
                 }
+=======
+                return currentEmployee.id == employee.id
+            })
+            if (employeeToUpdate) {
+                employeeToUpdate.name = employee.name;
+                employeeToUpdate.surname = employee.surname;
+                employeeToUpdate.id = employee.id;
+                employeeToUpdate.role = employee.role;
+                employeeToUpdate.sex = employee.sex;
+                employeeToUpdate.src = employee.src;
+            } else {
+                console.log(employee);
+                $scope.employeeList.push(employee);
+                var newId = $scope.employeeList[$scope.employeeList.length - 1].id + 1;
+                $scope.employeeList.employee.id = newId;
+            }
+>>>>>>> origin/master
         }
 
         getEmployeeList();
@@ -110,8 +128,13 @@ angular.module("workspaceApp")
                     $scope.showEmployeeEditDialog = false;
                     $scope.$emit('resetEmployeeData');
                 }
+<<<<<<< HEAD
                 $scope.saveEmployee = function () {
                     if (employeeInfo.$valid){
+=======
+                $scope.saveEmployee = function (informationForm) {
+                    if (informationForm.$valid) {
+>>>>>>> origin/master
                         $scope.showEmployeeEditDialog = false;
                         $scope.$emit('saveEmployeeData', $scope.selectedEmployee);
                     }
