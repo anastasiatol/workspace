@@ -1,45 +1,36 @@
 <div class="modalWindow" ng-show="showEmployeeEditDialog">
     <div class="modalContent">
         <div class="modalForm">
-<<<<<<< HEAD
-            <form class='information' name='employeeInfo'>
-                Name: <br>
-                <input type="text" name='name' ng-model='selectedEmployee.name' required ng-minlength='2'>
-                Surname:
-                <br>
-                <input type="text" name='surname' ng-model="selectedEmployee.surname" > 
-                Sex:
-                <br>
-                <input type="radio" name="sex" value="male" ng-model="selectedEmployee.sex"> 
-                male
-                <br>
-                <input type='radio' name='sex' value='female' ng-model="selectedEmployee.sex"> 
-                female
-                <br> 
-                Role
-                <br>
-                <select name='role' ng-model="selectedEmployee.role" >
-=======
-            <form name='informationForm' class='information'>
-                Name: <br>
-                <input type="text" ng-model='selectedEmployee.name' ng-minlength=2 required> Surname:
-                <br>
-                <input type="text" ng-model="selectedEmployee.surname" ng-minlength=2 required> Sex:
-                <br>
-                <input type="radio" name="sex" value="male" ng-model='selectedEmployee.sex' required> male
-                <br>
-                <input type='radio' name='sex' value='female' ng-model='selectedEmployee.sex' required> female
-                <br> Role
-                <br>
-                <select ng-model="selectedEmployee.role" required>
->>>>>>> origin/master
+            <form class='informationForm' name='employeeInfo'>
+                <div>
+                    Name: 
+                    <input type="text" name='name' ng-model='selectedEmployee.name' required ng-minlength='2'>
+                </div>
+                <div>
+                    Surname:
+                    <input type="text" name='surname' ng-model="selectedEmployee.surname" >
+                </div>
+                <div>
+                    Sex:
+                    <div>
+                        <input type="radio" name="sex" value="male" ng-model="selectedEmployee.sex"> 
+                        male
+                        <input type='radio' name='sex' value='female' ng-model="selectedEmployee.sex"> 
+                        female
+                    </div>
+                </div>
+                <div>
+                    Role:
+                    <select name='role' ng-model="selectedEmployee.role" >
                     <option value="Chairman">Chairman</option>
                     <option value="Manager">Manager</option>
                     <option value="Consultant">Consultant</option>
-                </select>
+                    <option value="Accountant">Accountant</option>
+                    </select>
+                </div>
             </form>
             <div class="action-buttons">
-                <div class="button" ng-click="saveEmployee(informationForm)">save</div>
+                <div class="button" ng-click="saveEmployee(employeeInfo)">save</div>
                 <div class="button" ng-click="cancelChanges()">cancel</div>
             </div>
         </div>

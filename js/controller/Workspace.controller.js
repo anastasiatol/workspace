@@ -3,9 +3,7 @@ angular.module("workspaceApp")
         $scope.showEmployeeEditDialog = false;
         var getEmployeeList = function () {
             getEmployeeListFromServer().then(function (response) {
-                console.log(response.data);
                 $scope.employeeList = response.data;
-
                 $scope.$apply();
             })
         }
@@ -45,7 +43,6 @@ angular.module("workspaceApp")
 
         var updateEmployee = function (employee) {
             var employeeToUpdate = $scope.employeeList.find(function (currentEmployee) {
-<<<<<<< HEAD
                     return currentEmployee.id == employee.id
                 })
                 if (employeeToUpdate) {
@@ -56,30 +53,11 @@ angular.module("workspaceApp")
                     employeeToUpdate.sex = employee.sex;
                     employeeToUpdate.src = employee.src;
                 } else {
-                    console.log(employee);
                     $scope.employeeList.push(employee);
                     var newId = $scope.employeeList[$scope.employeeList.length - 1].id + 1;
                     $scope.employeeList.employee.id = newId;
                 }
-=======
-                return currentEmployee.id == employee.id
-            })
-            if (employeeToUpdate) {
-                employeeToUpdate.name = employee.name;
-                employeeToUpdate.surname = employee.surname;
-                employeeToUpdate.id = employee.id;
-                employeeToUpdate.role = employee.role;
-                employeeToUpdate.sex = employee.sex;
-                employeeToUpdate.src = employee.src;
-            } else {
-                console.log(employee);
-                $scope.employeeList.push(employee);
-                var newId = $scope.employeeList[$scope.employeeList.length - 1].id + 1;
-                $scope.employeeList.employee.id = newId;
-            }
->>>>>>> origin/master
         }
-
         getEmployeeList();
     })
     .directive('infoEmployeeModal', function () {
@@ -118,8 +96,7 @@ angular.module("workspaceApp")
                 console.log(scope);
             },
             controller: function ($scope) {
-                console.log($scope);
-
+                
                 $scope.onClose = function () {
                     $scope.showEmployeeEditDialog = false;
                 }
@@ -128,13 +105,9 @@ angular.module("workspaceApp")
                     $scope.showEmployeeEditDialog = false;
                     $scope.$emit('resetEmployeeData');
                 }
-<<<<<<< HEAD
-                $scope.saveEmployee = function () {
-                    if (employeeInfo.$valid){
-=======
-                $scope.saveEmployee = function (informationForm) {
-                    if (informationForm.$valid) {
->>>>>>> origin/master
+
+                $scope.saveEmployee = function (employeeInfo) {
+                    if (employeeInfo.$valid) {
                         $scope.showEmployeeEditDialog = false;
                         $scope.$emit('saveEmployeeData', $scope.selectedEmployee);
                     }

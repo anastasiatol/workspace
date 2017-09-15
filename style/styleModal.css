@@ -15,25 +15,33 @@
     border: 2px solid rgb(14, 31, 230);
     width: 60%;
     max-width: 400px;
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
 }
 
+.modal{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.
 .modalContent span {
     float: right;
     margin-right: 3px;
 }
 
-.modalContent img {
-    width: 45%;
-    height: 45%;
+.modal img {
+    width: 80%;
 }
 
-.modalContent .information {
+.modalContent .informationForm {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.modalContent .informationForm > div {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
 }
 
 .modalForm {
@@ -41,6 +49,10 @@
     flex-direction: column;
     margin: 5px;
     justify-content: space-around;
+}
+
+.action-buttons{
+    display: flex;
 }
 
 .action-buttons .button {
@@ -56,11 +68,6 @@
     font-size: 18px;
     text-align: center;
     margin: 5px;
-}
-.block1{
-    display: flex;
-    margin: 5px;
-    justify-content: space-around;
 }
 .ng-invalid.ng-touched{
     background: red;

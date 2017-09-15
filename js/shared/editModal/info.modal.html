@@ -2,19 +2,19 @@
     <div class="modalContent">
         <span ng-click='onClose()'>&times</span>
         <div class="modal">
-            <div class='block1'>
-            <img ng-src={{selectedEmployee.src}}>
-                <div class='information'>
-                    <p>{{selectedEmployee.name}}</p>
-                    <p>{{selectedEmployee.surname}}</p>
-                    <p>{{selectedEmployee.sex}}</p>
-                </div>
+            <div class='photoBlock'>
+                <img ng-src={{selectedEmployee.src}}>
             </div>
-            <div class='modalForm'>{{selectedEmployee.role}}</div>
-            <div class="action-buttons">
+            <div class='information'>
+                <p>{{selectedEmployee.name}}</p>
+                <p>{{selectedEmployee.surname}}</p>
+                <p>{{selectedEmployee.sex}}</p>
+                <p>{{selectedEmployee.role}}</p>
+                <div class="action-buttons">
                 <div class="button" ng-click="openModalEdit()">edit</div>
                 <div class="button" ng-click="deleteEmployee()">delete</div>
             </div>
+            </div>  
         </div>
     </div>
 </div>

@@ -119,6 +119,7 @@
     .whitebox {
         width: 43%;
         font-size: 1.75vw;
+    }
 }
 
 @media screen and (max-width: 400px) {
