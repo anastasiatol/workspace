@@ -15,6 +15,7 @@
     border: 2px solid rgb(14, 31, 230);
     width: 60%;
     max-width: 400px;
+    min-width: 250px;
 }
 
 .modal{
@@ -22,14 +23,16 @@
     align-items: center;
     align-content: center;
 }
-.
-.modalContent span {
+.modalContent span{
     float: right;
-    margin-right: 3px;
+    padding: 0px 3px;
 }
 
+.modal photoblock{
+    width: 50%;
+}
 .modal img {
-    width: 80%;
+    width: 100%;
 }
 
 .modalContent .informationForm {
@@ -38,7 +41,7 @@
     justify-content: space-around;
 }
 
-.modalContent .informationForm > div {
+.modalContent .informationForm>div {
     display: flex;
     justify-content: space-around;
     margin: 5px;

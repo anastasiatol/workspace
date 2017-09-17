@@ -35,7 +35,9 @@
             <div class="button" ng-click="createEmployee()" >add a new employee</div>
             <div class="employees">
                 <div class="whitebox" ng-click="openModalWindow(employee)" ng-repeat='employee in employeeList | filter:{surname:searchEmployee}'>
-                    <img ng-src={{employee.src}} class="small">
+                    <div class="small">
+                        <img ng-src={{employee.src}} >
+                    </div>
                     <div class="infMainPage">
                         <h1>{{employee.name}} {{employee.surname}}</h1>
                         <h2>{{employee.age}}</h2>

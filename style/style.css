@@ -11,20 +11,20 @@
     color: white;
     background: rgb(30, 114, 227);
     padding: 5px 10px;
-    font-size: 7vw;
+    font-size: 30px;
 }
 .logoline>p{
     flex-grow: 2;
 }
-.logoline>.button{
+.logoline .button{
     background: white;
-    font-size: 5vw;
+    font-size: 24px;
     color: rgb(30, 114, 227);
     margin: 0px 5px;
     border: white;
     color: rgb(14, 31, 230)
 }
-.logoline>.button:hover{
+.button:hover{
     background: rgb(247, 83, 177);
     font-weight: 800;
     transition: all 0.5s ease;
@@ -34,12 +34,12 @@
 .mainbody{
     width: 95%;
     max-width: 1800px;
-    background: rgba(170, 223, 252, 0.75);
     margin: 15px;
     padding: 10px;
 }
 .search-field{
-   width: 95%;
+    width: 95%;
+    line-height: 30px;
 }
 .searchItems{
     display: flex;
@@ -55,19 +55,18 @@
 .whitebox{
     width: 30%;             
     background: white;
-    padding: 5px;
     margin: 5px;
     text-align: center;
-    font-size: 1.5vw;
-    color: rgb(14, 31, 230);
-    border: 1px rgba(170, 223, 252, 0.75) solid;
-    font-size: 1.25vw;
+    color: rgb(41, 41, 41);
+    font-size: 10px;
     display: flex;
     justify-content: space-between;
 }
 .small{
-    width: 50%;
-    height: 100%
+    width: 60%;
+}
+.small>img{
+    width: 100%;
 }
 .infMainPage{
     display: flex;
@@ -82,7 +81,7 @@
     align-items: flex-end;
 }
 .connections img{
-    width: 25%;
+    width: 20%;
     margin: 3px;
     border: solid 1px white;
     margin: auto;
@@ -110,14 +109,14 @@
     background: rgb(247, 83, 177); 
 }
 .whitebox:hover{
-    box-shadow: inset 0 0 0 5px rgb(113, 113, 113);
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
+    box-shadow: 0 0 3px 3px rgb(163, 163, 163);
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
 }
 @media screen and (max-width: 800px) {
     .whitebox {
-        width: 43%;
+        width: 45%;
         font-size: 1.75vw;
     }
 }
