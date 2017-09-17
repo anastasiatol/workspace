@@ -16,20 +16,19 @@
     width: 60%;
     max-width: 400px;
     min-width: 250px;
+    text-align: center;
 }
 
 .modal{
     display: flex;
-    align-items: center;
-    align-content: center;
 }
 .modalContent span{
     float: right;
     padding: 0px 3px;
 }
 
-.modal photoblock{
-    width: 50%;
+.modal .photoBlock{
+    width: 80%;
 }
 .modal img {
     width: 100%;
@@ -39,14 +38,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 100%;
 }
 
-.modalContent .informationForm>div {
-    display: flex;
-    justify-content: space-around;
-    margin: 5px;
+.informationForm h2, .informationForm .action-buttons{
+    flex-grow: 2;
 }
-
 .modalForm {
     display: flex;
     flex-direction: column;
@@ -56,6 +53,7 @@
 
 .action-buttons{
     display: flex;
+    align-items: center;
 }
 
 .action-buttons .button {
@@ -63,7 +61,6 @@
     width: 40%;
     margin: 5px;
     text-align: center;
-    display: inline-block;
 }
 
 .modalContent p {

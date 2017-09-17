@@ -11,6 +11,10 @@
                     <input type="text" name='surname' ng-model="selectedEmployee.surname" >
                 </div>
                 <div>
+                    Date of birth:
+                    <input ng-model='selectedEmployee.age' required ng-pattern='/\d\d\/d\d/\d\d\d\d/'>
+                </div>
+                <div>
                     Sex:
                     <div>
                         <input type="radio" name="sex" value="male" ng-model="selectedEmployee.sex"> 

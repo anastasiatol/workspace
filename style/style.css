@@ -5,13 +5,14 @@
 }
 .logoline{
     width: 95%;
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 15px;
     display: flex;
     color: white;
     background: rgb(30, 114, 227);
     padding: 5px 10px;
     font-size: 30px;
+    margin: auto;
 }
 .logoline>p{
     flex-grow: 2;
@@ -33,9 +34,10 @@
 }
 .mainbody{
     width: 95%;
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 15px;
     padding: 10px;
+    margin: auto;
 }
 .search-field{
     width: 95%;
